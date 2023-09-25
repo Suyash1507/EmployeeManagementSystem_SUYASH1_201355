@@ -57,34 +57,21 @@ int IsAlphabetic(const char* str) {
 }
 
 int IsValidDate(int dd, int mm, int yy) {
-	// Function to check if the date is valid
-
-	// Check if the year is non-negative and the month is within the valid range (1 to 12).
+	
 	if (yy >= 0 && mm >= 1 && mm <= 12) {
-		int daysInMonth; // Variable to store the number of days in the month
-
-		// Check the month to determine the number of days it should have.
+		int daysInMonth; 
 		if (mm == 2) {
-			// February: handling for leap years
-			// February has 29 days in leap years (divisible by 4 but not by 100, or divisible by 400),
-			// otherwise, it has 28 days.
 			daysInMonth = (yy % 4 == 0 && yy % 100 != 0) || (yy % 400 == 0) ? 29 : 28;
 		}
 		else if (mm == 4 || mm == 6 || mm == 9 || mm == 11) {
-			// April, June, September, November have 30 days.
 			daysInMonth = 30;
 		}
 		else {
-			// All other months (January, March, May, July, August, October, December) have 31 days.
 			daysInMonth = 31;
 		}
-
-		// Check if the day is within the valid range for the determined month.
 		return (dd >= 1 && dd <= daysInMonth);
 	}
-
-	// If the year is negative or the month is outside the valid range, it's an invalid date.
-	return 0; // Invalid date
+	return 0; 
 }
 
 
